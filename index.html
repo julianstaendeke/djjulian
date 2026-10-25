@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DJ Julian – Open Format DJ in Limburg</title>
+<meta name="description" content="DJ Julian – Open Format DJ für Hochzeit, Geburtstag und Firmenfeier in Limburg, im Taunus und im Westerwald. Auf Wunsch mit Ton, Licht und Effekten.">
+<meta property="og:title" content="DJ Julian – Open Format DJ">
+<meta property="og:description" content="Hochzeit • Geburtstag • Event · Limburg, Taunus &amp; Westerwald">
+<meta property="og:image" content="julian.jpg">
+<style>
+:root{
+  --bg:#05080b;
+  --bg2:#0c141b;
+  --ice:#e6f4ff;
+  --sky:#6ab4ea;
+  --text:#dbe7f1;
+  --muted:#8197a8;
+  --grad:linear-gradient(135deg,var(--ice),var(--sky));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.65;overflow-x:hidden;
+}
+a{color:inherit}
+.wrap{width:min(1080px,100% - 32px);margin-inline:auto}
+.narrow{width:min(720px,100% - 32px);margin-inline:auto}
+h1,h2,h3{text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--ice)}
+section{padding:36px 0;position:relative}
+.glow{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 30%,rgba(60,120,170,.22),transparent 60%)}
+.alt{background:linear-gradient(180deg,var(--bg),var(--bg2) 50%,var(--bg))}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:30;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  background:rgba(5,8,11,.7);border-bottom:1px solid rgba(106,180,234,.12)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-weight:700;letter-spacing:.14em;text-decoration:none;color:var(--ice)}
+nav ul{display:flex;gap:24px;list-style:none;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
+nav ul a{text-decoration:none;color:var(--muted);transition:color .2s}
+nav ul a:hover{color:var(--ice)}
+
+/* Hero */
+.hero{display:flex;align-items:center;text-align:center;padding:104px 0 40px}
+.ring{
+  width:min(380px,78vw);aspect-ratio:1;border-radius:50%;margin:0 auto 28px;
+  box-shadow:0 0 0 3px #fff,0 0 40px 6px rgba(255,255,255,.35),0 0 120px rgba(106,180,234,.25);
+  overflow:hidden;background:#000;
+}
+.ring img{width:100%;height:100%;object-fit:cover;display:block}
+.hero h1{font-size:clamp(2.6rem,9vw,6rem);line-height:1;letter-spacing:.12em}
+.hero .sub{margin-top:16px;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;font-size:clamp(.8rem,2.4vw,1rem)}
+.hero .tag{margin:22px auto 0;max-width:34ch;font-size:clamp(1rem,2.6vw,1.2rem);color:var(--text)}
+.btn{
+  display:inline-block;margin-top:28px;padding:14px 34px;border-radius:999px;min-height:48px;
+  background:var(--grad);color:#05121c;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;border:0;cursor:pointer;font-size:.9rem;
+  box-shadow:0 0 0 rgba(106,180,234,0);transition:box-shadow .25s,transform .25s;
+}
+.btn:hover{box-shadow:0 0 32px rgba(106,180,234,.55);transform:translateY(-2px)}
+.spark{position:absolute;width:22px;height:22px;opacity:.7;animation:tw 3.5s ease-in-out infinite}
+.spark svg{width:100%;height:100%;fill:#a9b9c8}
+@keyframes tw{50%{opacity:.2;transform:scale(.8)}}
+
+/* Überschriften */
+.head{text-align:center;margin-bottom:22px}
+.eyebrow{display:block;margin-bottom:12px;font-size:clamp(1rem,2.6vw,1.2rem);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sky)}
+.head h2{font-size:clamp(1.7rem,5vw,2.6rem);text-transform:none;letter-spacing:.005em;line-height:1.2;max-width:22ch;margin-inline:auto}
+.head p{color:var(--muted);margin-top:14px;max-width:52ch;margin-inline:auto}
+
+/* Textblöcke */
+.lead{font-size:clamp(1.15rem,3vw,1.45rem);color:var(--ice);line-height:1.5;text-align:center}
+.copy p{margin-top:18px;color:var(--text)}
+.copy p.muted{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px}
+.chip{padding:8px 16px;border-radius:999px;font-size:.88rem;letter-spacing:.04em;
+  background:rgba(255,255,255,.07);border:1px solid rgba(106,180,234,.22);color:var(--ice)}
+.quote{margin:20px auto 0;padding:20px 24px;border-radius:20px;text-align:center;font-size:1.05rem;color:var(--ice);
+  background:linear-gradient(180deg,rgba(18,30,41,.7),rgba(8,13,18,.7));border:1px solid rgba(106,180,234,.18)}
+
+.marquee{margin-top:20px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee .track{display:flex;gap:8px;width:max-content;animation:mq 38s linear infinite}
+.marquee .chip{white-space:nowrap}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(calc(-50% - 4px))}}
+@media(prefers-reduced-motion:reduce){.marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.marquee .track{animation:none}}
+
+/* Cards */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{
+  text-align:center;padding:36px 24px;border-radius:24px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(18,30,41,.7),rgba(8,13,18,.7));
+  border:1px solid rgba(106,180,234,.14);transition:border-color .3s,box-shadow .3s,transform .3s;
+}
+.card:hover{border-color:rgba(106,180,234,.55);box-shadow:0 0 36px rgba(106,180,234,.15);transform:translateY(-4px)}
+.card h3{font-size:1.05rem;margin-bottom:10px}
+.card p{color:var(--muted);font-size:.95rem}
+.badge{
+  width:92px;height:92px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle,#23465e 0%,#0b141b 70%);
+  box-shadow:0 0 0 2px rgba(230,244,255,.9),0 0 0 7px rgba(106,180,234,.18);
+}
+.badge.sm{width:68px;height:68px;margin-bottom:16px}
+.badge.sm svg{width:30px;height:30px}
+.badge svg{width:42px;height:42px;stroke:url(#g);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Foto-Karten */
+.photo{padding:0;text-align:left}
+.photo img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.photo .body{padding:24px 24px 30px}
+.photo h3{margin-bottom:8px}
+
+/* Ablauf: 3-Schritte-Plan untereinander */
+.steps{display:grid;gap:0;max-width:640px;margin-inline:auto;counter-reset:s}
+.step{position:relative;display:block;padding:0 0 30px 74px;min-height:56px}
+.step:last-child{padding-bottom:0}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;display:grid;place-items:center;
+  width:52px;height:52px;border-radius:50%;font-size:1.2rem;font-weight:700;color:#05121c;background:var(--grad);
+  box-shadow:0 0 0 5px rgba(106,180,234,.15)}
+.step:not(:last-child)::after{content:"";position:absolute;left:25px;top:60px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,rgba(106,180,234,.6),rgba(106,180,234,.1))}
+.step h3{font-size:1.05rem;margin:4px 0 6px}
+.step p{color:var(--muted);font-size:.97rem}
+.hint{text-align:center;color:var(--muted);font-size:.9rem;margin-top:18px}
+
+/* Technik-Banner */
+.banner{position:relative;border-radius:26px;overflow:hidden;margin-bottom:18px;border:1px solid rgba(106,180,234,.18)}
+.banner img{width:100%;height:clamp(200px,38vw,380px);object-fit:cover;display:block}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(5,8,11,.8))}
+.banner p{position:absolute;z-index:1;left:24px;right:24px;bottom:20px;font-size:clamp(1rem,2.8vw,1.3rem);color:var(--ice)}
+
+/* Zitat-Slider */
+.slider{position:relative;padding:0 64px}
+.slider{--pv:3;--gap:18px}
+.vp{overflow:hidden;padding:18px 0 8px}
+.track2{display:flex;gap:var(--gap);will-change:transform;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.track2.nt{transition:none}
+.qcard{flex:0 0 calc((100% - var(--gap)*(var(--pv) - 1))/var(--pv));position:relative;padding:34px 26px 24px;border-radius:24px;text-align:left;
+  display:flex;flex-direction:column;
+  background:linear-gradient(180deg,rgba(18,30,41,.7),rgba(8,13,18,.7));border:1px solid rgba(106,180,234,.16)}
+.qcard[hidden]{display:none}
+.qcard::before{content:"";position:absolute;left:26px;top:-12px;width:26px;height:26px;border-radius:50%;
+  background:var(--grad);box-shadow:0 0 22px rgba(106,180,234,.5)}
+.qcard h3{font-size:1rem;margin-bottom:10px;color:var(--ice);letter-spacing:.04em;text-transform:none}
+.qcard blockquote{font-size:1rem;line-height:1.55;color:var(--ice);flex:1}
+.qcard footer{margin-top:18px;padding:14px 0 0;border:0;border-top:1px solid rgba(106,180,234,.18);text-align:left;
+  display:flex;flex-direction:column;gap:2px;font-size:.86rem;color:var(--muted)}
+.qcard footer span{margin-top:6px;color:var(--sky);font-weight:600}
+.qcard footer strong{color:var(--ice);font-weight:600;font-size:.95rem}
+.etype{align-self:flex-start;margin-bottom:12px;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  padding:6px 14px;border-radius:999px;color:#05121c;background:var(--grad)}
+.arr{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:50px;height:50px;border-radius:50%;
+  border:1px solid rgba(106,180,234,.55);background:rgba(12,20,27,.85);color:var(--ice);font-size:2rem;line-height:1;
+  padding-bottom:4px;cursor:pointer;transition:background .2s,box-shadow .2s}
+.arr:hover{background:rgba(106,180,234,.3);box-shadow:0 0 22px rgba(106,180,234,.45)}
+.arr.prev{left:0}.arr.next{right:0}
+@media(max-width:900px){.slider{--pv:2}}
+@media(max-width:640px){
+  .slider{padding:0 0 66px;--pv:1}
+  .vp{padding-top:16px}
+  .qcard{padding:28px 20px 18px;border-radius:20px}
+  .qcard h3{font-size:.95rem;margin-bottom:8px}
+  .qcard blockquote{font-size:.96rem;line-height:1.5}
+  .qcard footer{margin-top:14px;padding-top:12px}
+  .arr{top:auto;bottom:0;transform:none;width:50px;height:50px;font-size:1.9rem;
+    border-color:rgba(106,180,234,.8);background:rgba(106,180,234,.18)}
+  .arr.prev{left:calc(50% - 60px)}
+  .arr.next{left:auto;right:calc(50% - 60px)}
+}
+
+/* Technik-Akkordeon */
+.acc{display:grid;gap:12px}
+.acc details{border:1px solid rgba(106,180,234,.16);border-radius:20px;padding:0 20px;
+  background:linear-gradient(180deg,rgba(18,30,41,.7),rgba(8,13,18,.7));transition:border-color .3s,box-shadow .3s}
+.acc details[open]{border-color:rgba(106,180,234,.5);box-shadow:0 0 30px rgba(106,180,234,.12)}
+.acc summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:16px;padding:16px 0;color:var(--ice)}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";margin-left:auto;font-size:1.6rem;line-height:1;color:var(--sky);transition:transform .25s}
+.acc details[open] summary::after{transform:rotate(45deg)}
+.acc .ic{flex:0 0 48px;height:48px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle,#23465e 0%,#0b141b 70%);box-shadow:0 0 0 2px rgba(230,244,255,.85),0 0 0 5px rgba(106,180,234,.15)}
+.acc .ic svg{width:24px;height:24px;stroke:url(#g);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.acc .st{display:flex;flex-direction:column}
+.acc .st strong{font-size:1rem;letter-spacing:.08em;text-transform:uppercase}
+.acc .st em{font-style:normal;color:var(--muted);font-size:.9rem}
+.acc ul{list-style:none;padding:0 0 18px 64px;display:grid;gap:8px;color:var(--text);font-size:.97rem}
+.acc li::before{content:"";display:inline-block;width:7px;height:7px;margin-right:10px;border-radius:50%;background:var(--grad)}
+
+/* FAQ */
+.faq summary{padding:18px 0}
+.faq .st strong{text-transform:none;letter-spacing:.01em;font-size:1.02rem;font-weight:600}
+.faq details p{padding:0 0 18px;color:var(--text);font-size:.97rem}
+
+/* Soon */
+.soon{border-style:dashed}
+.tag2{display:inline-block;margin-top:14px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:5px 12px;border-radius:999px;border:1px solid rgba(106,180,234,.35);color:var(--sky)}
+
+/* Form */
+form{max-width:620px;margin:0 auto;display:grid;gap:16px}
+.row{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+label{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:grid;gap:6px}
+input,select,textarea{
+  width:100%;padding:14px 16px;border-radius:14px;background:#0a1219;color:var(--ice);
+  border:1px solid rgba(106,180,234,.2);font:inherit;font-size:16px;
+}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--sky);box-shadow:0 0 18px rgba(106,180,234,.25)}
+textarea{min-height:130px;resize:vertical}
+form .btn{justify-self:center;margin-top:8px}
+.note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:18px}
+
+footer{padding:48px 0;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid rgba(106,180,234,.12)}
+footer a{color:var(--sky);text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer .links{display:flex;gap:22px;justify-content:center;margin-bottom:14px;flex-wrap:wrap}
+
+/* Sticky CTA */
+.sticky-cta{position:fixed;z-index:20;right:28px;bottom:28px;margin:0;padding:16px 32px;font-size:1rem;
+  display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.7);
+  box-shadow:0 8px 26px rgba(0,0,0,.5),0 0 14px rgba(106,180,234,.28);
+  opacity:0;transform:translateY(24px);pointer-events:none;transition:opacity .3s,transform .3s,box-shadow .25s}
+.sticky-cta::before{content:"";position:absolute;inset:-4px;border-radius:999px;border:1px solid rgba(106,180,234,.4);
+  animation:pulse 4.5s ease-out infinite;pointer-events:none}
+@keyframes pulse{0%,60%{transform:scale(.98);opacity:0}70%{opacity:.55}100%{transform:scale(1.1);opacity:0}}
+@media(prefers-reduced-motion:reduce){.sticky-cta::before{animation:none}}
+.sticky-cta.show{opacity:1;transform:none;pointer-events:auto}
+.contact-alt{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:center;margin-top:22px;color:var(--muted);font-size:.95rem}
+.contact-alt a{color:var(--sky);text-decoration:none;font-weight:600}
+.contact-alt a:hover{text-decoration:underline}
+
+/* Reveal */
+.rev{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.rev.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rev{opacity:1;transform:none;transition:none}.spark{animation:none}html{scroll-behavior:auto}
+}
+
+/* Mobile-Menü */
+.burger{display:none;width:44px;height:44px;margin-left:-10px;border:0;background:none;cursor:pointer;
+  flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.burger span{display:block;width:22px;height:2px;border-radius:2px;background:var(--ice);transition:transform .25s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.overlay{position:fixed;inset:0;z-index:28;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;left:0;bottom:0;z-index:29;width:min(300px,82vw);padding:84px 26px 26px;
+  background:linear-gradient(180deg,#0c141b,#05080b);border-right:1px solid rgba(106,180,234,.2);
+  transform:translateX(-102%);transition:transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;gap:4px;overflow-y:auto}
+.drawer.open{transform:none;box-shadow:0 0 60px rgba(0,0,0,.6)}
+.drawer .dtitle{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sky);font-weight:700;margin-bottom:10px}
+.drawer a{padding:14px 4px;font-size:1.05rem;color:var(--ice);text-decoration:none;border-bottom:1px solid rgba(106,180,234,.14)}
+.drawer a:last-child{border-bottom:0}
+.drawer a:active{color:var(--sky)}
+@media(min-width:641px){.drawer,.overlay{display:none}}
+
+/* Mobile */
+@media(max-width:640px){
+  .burger{display:flex}
+  section{padding:28px 0}
+  .hero{padding:84px 0 28px}
+  .head{margin-bottom:18px}
+  .card{padding:28px 20px}
+  .photo{padding:0}
+  .row{grid-template-columns:1fr}
+  nav ul{gap:0}
+  nav ul li:not(:last-child){display:none}
+  nav ul li:last-child a{background:var(--grad);color:#05121c;padding:8px 16px;border-radius:999px;font-weight:700}
+  .spark{display:none}
+  .sticky-cta{left:16px;right:16px;bottom:14px;text-align:center}
+  footer{padding-bottom:96px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#e6f4ff"/><stop offset="1" stop-color="#6ab4ea"/></linearGradient></defs>
+  <symbol id="star4" viewBox="0 0 24 24"><path d="M12 0c.8 6.6 5.4 11.2 12 12-6.6.8-11.2 5.4-12 12-.8-6.6-5.4-11.2-12-12C6.6 11.2 11.2 6.6 12 0z"/></symbol>
+</svg>
+
+<nav>
+  <div class="wrap">
+    <button type="button" class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+    <a class="logo" href="#top">DJ JULIAN</a>
+    <ul>
+      <li><a href="#leistungen">Anlässe</a></li>
+      <li><a href="#technik">Angebote</a></li>
+      <li><a href="#referenzen">Referenzen</a></li>
+      <li><a href="#kontakt">Anfrage</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <span class="spark" style="top:22%;left:10%"><svg><use href="#star4"/></svg></span>
+  <span class="spark" style="top:30%;right:12%;width:30px;height:30px;animation-delay:1s"><svg><use href="#star4"/></svg></span>
+  <span class="spark" style="bottom:16%;right:20%;animation-delay:2s"><svg><use href="#star4"/></svg></span>
+  <div class="wrap">
+    <div class="ring"><img src="julian.jpg" alt="DJ Julian am Pioneer-DJ-Pult" width="380" height="380"></div>
+    <h1>DJ Julian</h1>
+    <p class="sub">Open Format DJ · Limburg, Taunus &amp; Westerwald</p>
+    <a class="btn" href="#kontakt">Jetzt anfragen</a>
+  </div>
+</header>
+
+<section id="ueber" class="alt">
+  <div class="narrow copy">
+    <div class="head rev" style="margin-bottom:22px">
+      <span class="eyebrow">Mein Weg zum DJ</span>
+      <h2>Vom Partygast zum Auflegen</h2>
+    </div>
+    <p class="rev" style="text-align:center">Hi, ich bin Julian, 25 Jahre alt und DJ aus der Region Limburg. Ich liebe Musik, und zwar in jeder Richtung: von Schlager bis Techno. Auf Partys war ich immer der, der die Song-Warteschlange mit guten Liedern gefüllt hat. Irgendwann wollte ich es selbst mit dem Mixen probieren. Heute spiele ich auf Hochzeiten, Geburtstagen und Firmenfeiern in Limburg, im Taunus und im Westerwald.</p>
+    <div class="marquee rev" aria-label="Genres: Aktuelle Charts, Pop-Klassiker, 90er & 2000er, Hip-Hop & R&B, House & Techno, Rock-Klassiker, Schlager & Partyhits">
+      <div class="track"><span class="chip">Aktuelle Charts</span><span class="chip">Pop-Klassiker</span><span class="chip">90er &amp; 2000er</span><span class="chip">Hip-Hop &amp; R&amp;B</span><span class="chip">House &amp; Techno</span><span class="chip">Rock-Klassiker</span><span class="chip">Schlager &amp; Partyhits</span><span class="chip" aria-hidden="true">Aktuelle Charts</span><span class="chip" aria-hidden="true">Pop-Klassiker</span><span class="chip" aria-hidden="true">90er &amp; 2000er</span><span class="chip" aria-hidden="true">Hip-Hop &amp; R&amp;B</span><span class="chip" aria-hidden="true">House &amp; Techno</span><span class="chip" aria-hidden="true">Rock-Klassiker</span><span class="chip" aria-hidden="true">Schlager &amp; Partyhits</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="leistungen" class="alt">
+  <div class="wrap">
+    <div class="head rev">
+      <span class="eyebrow">Für jeden Anlass</span>
+      <h2>Jede Feier hat ihre eigene Geschichte</h2>
+    </div>
+    <div class="grid">
+      <div class="card photo rev">
+        <img src="fotos/hochzeit-1.jpg" alt="Festlich gedeckter Hochzeitssaal bei Kerzenlicht (KI-Bild)" loading="lazy">
+        <div class="body">
+          <h3>Hochzeit</h3>
+          <p>Sektempfang, Essen, Eröffnungstanz, Party: Ich sorge für den Soundtrack eures Tages und lasse Raum für die Momente, die zählen.</p>
+        </div>
+      </div>
+      <div class="card photo rev">
+        <img src="fotos/geburtstag-1.jpg" alt="Luftballons und Konfetti im Scheinwerferlicht (KI-Bild)" loading="lazy">
+        <div class="body">
+          <h3>Geburtstag</h3>
+          <p>Ob 18., 30. oder 60.: Hauptsache, es wird ein Abend, über den alle noch lange reden.</p>
+        </div>
+      </div>
+      <div class="card photo rev">
+        <img src="fotos/party-1.jpg" alt="Tanzende Gäste im Lichtstrahl (KI-Bild)" loading="lazy">
+        <div class="body">
+          <h3>Events &amp; Firmenfeiern</h3>
+          <p>Firmenfeier, Sommerfest, Vereinsabend: Auch wenn sich nicht alle kennen, bringe ich die Tanzfläche in Schwung.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="technik" style="padding-top:8px">
+  <div class="narrow">
+    <div class="head rev">
+      <span class="eyebrow">Dazu buchbar</span>
+      <h2>Ton, Licht und Effekte aus einer Hand</h2>
+      <p>Ihr könnt mich nur als DJ buchen oder als All-in-One-Paket mit Ton, Licht und Effekten. Ein Aufbau, ein Ansprechpartner, nichts zu koordinieren.</p>
+    </div>
+    <div class="acc rev">
+      <details>
+        <summary><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9a4 4 0 010 6M19 6a8 8 0 010 12"/></svg></span><span class="st"><strong>Ton</strong><em>Klarer Sound für jeden Raum</em></span></summary>
+        <ul><li>Tops für klaren Sound im ganzen Raum</li><li>Subwoofer für sauberen Bass</li><li>Mikrofon für Reden und Ansagen</li></ul>
+      </details>
+      <details>
+        <summary><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z"/></svg></span><span class="st"><strong>Licht</strong><em>Stimmung für Essen und Tanzfläche</em></span></summary>
+        <ul><li>Moving Heads</li><li>Stroboskop</li><li>Uplights</li><li>und weitere Lichteffekte</li></ul>
+      </details>
+      <details>
+        <summary><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l2.2 6.8L21 11l-6.8 2.2L12 20l-2.2-6.8L3 11l6.8-2.2z"/></svg></span><span class="st"><strong>Effekte</strong><em>Individuell anpassbar</em></span></summary>
+        <ul><li>Nebelmaschine und Hazer für Nebel</li><li>Konfettikanonen</li><li>Weitere Effekte nach Absprache</li></ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="vertrauen">
+  <div class="wrap">
+    <div class="head rev">
+      <span class="eyebrow">Darauf könnt ihr euch verlassen</span>
+      <h2>Eure Feier liegt mir am Herzen</h2>
+    </div>
+    <div class="grid">
+      <div class="card rev"><div class="badge sm"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.5 7.2L4 20l1.1-4.4A8 8 0 1121 12z"/></svg></div><h3>Persönliches Vorgespräch</h3><p>Wir lernen uns vorher kennen und besprechen Ablauf, Gästezahl und Stimmung. Besondere Programmpunkte bereiten wir gemeinsam vor.</p></div>
+      <div class="card rev"><div class="badge sm"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 018-2.7A4.5 4.5 0 0120 10c0 5.800-8 11-8 11z"/></svg></div><h3>Eure Wunschliste</h3><p>Eure Lieblingslieder bekommen einen festen Platz. No-Gos spiele ich nicht.</p></div>
+      <div class="card rev"><div class="badge sm"><svg viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 14l2 2 4-4"/></svg></div><h3>Klare Absprachen</h3><p>Vor der Buchung bekommt ihr ein klares Angebot mit Spielzeiten, Inhalten, Technik und Preis.</p></div>
+      <div class="card rev"><div class="badge sm"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Ruhe am Tag selbst</h3><p>Ich bin pünktlich zur abgesprochenen Zeit da und teste den Sound. Bei Wünschen meldet ihr euch direkt bei mir.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="referenzen">
+  <div class="wrap">
+    <div class="head rev">
+      <span class="eyebrow">Referenzen</span>
+      <h2>So könnte euer Abend werden</h2>
+    </div>
+    <div class="slider rev">
+      <div class="vp"><div class="track2" id="qtrack">
+      <figure class="qcard">
+        <span class="etype">Hochzeit</span>
+        <h3>Genau der Abend, den wir uns gewünscht haben</h3>
+        <blockquote>„Unsere Hochzeit in der Kulturscheune Schupbach war genau so, wie wir sie uns vorgestellt haben. Julian hat vorher mit uns über unsere Lieblingslieder gesprochen und am Abend genau die Stimmung getroffen. Vom Sektempfang bis zur Tanzfläche hat die Musik alles getragen. Unsere Gäste haben bis zum Schluss getanzt, und wir würden ihn jederzeit wieder buchen.“</blockquote>
+        
+
+<footer><strong>Yann &amp; Zoe</strong>Kulturscheune Schupbach · 2026</footer>
+      </figure>
+      <figure class="qcard">
+        <span class="etype">Kirmes</span>
+        <h3>Von der Blasmusik bis zur Abendparty</h3>
+        <blockquote>„Julian war jetzt zum zweiten Mal bei unserer Kirmes dabei, und für 2027 ist das dritte Jahr fest eingeplant. Beim Frühschoppen und beim Steinbacher Markt am Dienstag hat er genau den richtigen Ton getroffen. Am Abend hat er den Übergang von Blasmusik zu Partymusik hinbekommen, sodass Jung und Alt gemeinsam gefeiert haben. Dass wir ihn wieder buchen, sagt eigentlich alles.“</blockquote>
+        <footer><strong>Vorstand FC Steinbach</strong>Kirmes Steinbach · 2025 &amp; 2026</footer>
+      </figure>
+      <figure class="qcard">
+        <span class="etype">50. Geburtstag</span>
+        <h3>Für jeden etwas dabei</h3>
+        <blockquote>„Zu meinem 50. Geburtstag in Marburg wollte ich Musik, die zu allen passt: zu den Jüngeren genauso wie zu den Älteren. Julian hat einen bunten Mix gespielt, bei dem für jeden etwas dabei war. Die Stimmung war den ganzen Abend gut, und viele Gäste haben mich noch Tage später darauf angesprochen.“</blockquote>
+        <footer><strong>Christoph</strong>Marburg · 2026</footer>
+      </figure>
+      <figure class="qcard">
+        <span class="etype">Firmenevent</span>
+        <h3>Eine Feier, die wir gern begleitet haben</h3>
+        <blockquote>„Es war toll, dass Julian unsere Feier im Autohaus in Eltville musikalisch begleitet hat. Die Musik hat zur Stimmung gepasst und im Hintergrund wie auf der Tanzfläche funktioniert. Die Zusammenarbeit war unkompliziert, und wir haben viele positive Rückmeldungen von den Kollegen und Gästen bekommen.“</blockquote>
+        <footer><strong>Alina</strong>Autohaus, Eltville · 2025</footer>
+      </figure>
+      <figure class="qcard">
+        <span class="etype">60. Geburtstag</span>
+        <h3>Wiesn-Stimmung zum 60.</h3>
+        <blockquote>„Meinen 60. Geburtstag haben wir im Oktoberfest-Stil gefeiert, und Julian hat die Musik genau dafür gebaut. Zwischen Wiesn-Hits und Partyklassikern hat er die Stimmung immer getroffen. Alle Gäste, von den Freunden bis zur Familie, haben mitgesungen und getanzt.“</blockquote>
+        <footer><strong>Markus</strong>Obertiefenbach · 2026</footer>
+      </figure>
+      <figure class="qcard">
+        <span class="etype">Schützenfest</span>
+        <h3>Schützenfest mit Schwung</h3>
+        <blockquote>„Julian hat bei unserem Schützenfest in Usingen für richtig gute Stimmung gesorgt. Er hat die Musik an das Publikum angepasst, vom Festzelt am Nachmittag bis zur Party am Abend. Die Zusammenarbeit war einfach und zuverlässig, und wir würden ihn gern wieder buchen.“</blockquote>
+        <footer><strong>Niklas, Vorstand</strong>Usingen · 2026</footer>
+      </figure>
+      <figure class="qcard">
+        <span class="etype">30. Geburtstag</span>
+        <h3>Ein 30. mit voller Tanzfläche</h3>
+        <blockquote>„Für meinen 30. Geburtstag wollte ich eine Party, auf der alle tanzen. Julian hat vorher gefragt, was ich gern höre, und am Abend einen Mix gespielt, der zu allen Gästen gepasst hat. Die Tanzfläche war lange voll, und ich habe viel positives Feedback bekommen.“</blockquote>
+        <footer><strong>Johannes</strong>Obertiefenbach · 2025</footer>
+      </figure>
+      <figure class="qcard">
+        <span class="etype">Firmenevent</span>
+        <h3>DJ und Karaoke in einem Abend</h3>
+        <blockquote>„Tolle Party! Die Kombination aus DJ und Karaoke war sehr gut und hat bei unserem Firmenevent im Hunsrück für richtig Stimmung gesorgt. Die Mitarbeiter haben mitgemacht, und die Feier war ein voller Erfolg.“</blockquote>
+        <footer><strong>Andre, CEO</strong>Hunsrück · 2026<span>Direkt wieder gebucht: für die Weihnachtsfeier</span></footer>
+      </figure>
+      </div></div>
+      <button type="button" class="arr prev" id="qprev" aria-label="Vorherige Stimmen">&#8249;</button>
+      <button type="button" class="arr next" id="qnext" aria-label="Nächste Stimmen">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+<section id="ablauf">
+  <div class="wrap">
+    <div class="head rev">
+      <span class="eyebrow">So läuft es ab</span>
+      <h2>Von der ersten Nachricht bis zum letzten Song</h2>
+    </div>
+    <div class="steps">
+      <div class="step rev"><h3>Anfrage</h3><p>Füllt das Anfrageformular am Ende dieser Seite aus und nennt mir Datum, Ort, Anlass und eure Kontaktdaten.</p></div>
+      <div class="step rev"><h3>Gespräch</h3><p>Wir sprechen über eure Wünsche, Equipment und weitere Details.</p></div>
+      <div class="step rev"><h3>Eure Feier</h3><p>Ich bin pünktlich wie abgesprochen da und teste den Sound. Bei Wünschen meldet ihr euch direkt bei mir. Dann gehört der Abend euch.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="narrow">
+    <div class="head rev">
+      <span class="eyebrow">FAQ</span>
+      <h2>Habt ihr noch Fragen?</h2>
+    </div>
+    <div class="acc faq rev">
+      <details>
+        <summary><span class="st"><strong>Wann sollten wir anfragen?</strong></span></summary>
+        <p>Am besten, sobald Location und Rahmen eures Events feststehen, also so früh wie möglich. Es kann aber auch sein, dass ich spontan Zeit habe. Fragt einfach an.</p>
+      </details>
+      <details>
+        <summary><span class="st"><strong>Was kostet ein Abend mit dir?</strong></span></summary>
+        <p>Das hängt von Dauer, Ort und Technik ab. Ihr bekommt vorab ein klares Angebot. Preise starten ab 200 €.</p>
+      </details>
+      <details>
+        <summary><span class="st"><strong>Wo legst du auf?</strong></span></summary>
+        <p>Meistens in Limburg, im Taunus und im Westerwald. Als Open-Format-DJ passe ich mich Anlass und Ort an, alles Weitere besprechen wir persönlich.</p>
+      </details>
+      <details>
+        <summary><span class="st"><strong>Was bedeutet Open Format?</strong></span></summary>
+        <p>Ich lege mich auf kein Genre fest. Mein Mix reicht von Schlager bis Techno und richtet sich nach euren Gästen und der Stimmung im Raum.</p>
+      </details>
+      <details>
+        <summary><span class="st"><strong>Kann ich Lieder wünschen oder Titel ausschließen?</strong></span></summary>
+        <p>Sehr gerne, das ist sogar gewollt. Eure Lieblingslieder bekommen einen festen Platz, und No-Gos spiele ich nicht.</p>
+      </details>
+      <details>
+        <summary><span class="st"><strong>Bringst du Ton, Licht und Effekte mit?</strong></span></summary>
+        <p>Ja, auf Wunsch bringe ich alles mit. Ich habe gute Technik und kenne sie selbst sehr gut. Das macht es für euch einfacher, denn ihr bekommt alles aus einer Hand. In der Regel wird es auch günstiger, als Technik woanders zu leihen und professionell aufbauen zu lassen.</p>
+      </details>
+      <details>
+        <summary><span class="st"><strong>Kann ich besondere Programmpunkte einplanen?</strong></span></summary>
+        <p>Na klar, das macht Spaß und gehört zu meinem Job. Eröffnungstanz, Reden oder andere besondere Momente bereiten wir gemeinsam vor.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="head rev">
+      <span class="eyebrow">Anfrage</span>
+      <h2>Erzählt mir von eurer Feier</h2>
+      <p>Ich melde mich persönlich bei euch. Unverbindlich und kostenlos.</p>
+    </div>
+    <form id="form" class="rev">
+      <div class="row">
+        <label>Name<input name="name" required autocomplete="name"></label>
+        <label>Telefon<input type="tel" name="telefon" autocomplete="tel" placeholder="optional"></label>
+      </div>
+      <label>E-Mail<input type="email" name="email" required autocomplete="email"></label>
+      <div class="row">
+        <label>Anlass
+          <select name="anlass">
+            <option>Hochzeit</option><option>Geburtstag</option>
+            <option>Firmenfeier</option><option>Sonstiges Event</option>
+          </select>
+        </label>
+        <label>Datum<input type="date" name="datum"></label>
+      </div>
+      <div class="row">
+        <label>Ort<input name="ort" placeholder="z. B. Limburg"></label>
+        <label>Was soll ich übernehmen?
+          <select name="leistung">
+            <option>DJ</option>
+            <option>DJ + Technik (Ton, Licht, Effekte)</option>
+          </select>
+        </label>
+      </div>
+      <label>Nachricht<textarea name="nachricht" placeholder="Gästezahl, Musikwünsche, Location …"></textarea></label>
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+      <button class="btn" type="submit">Anfrage senden</button>
+      <p id="status" role="status" class="note" style="margin:0"></p>
+    </form>
+    <div class="contact-alt">
+      <span>Oder schreibt mir direkt:</span>
+      <a href="mailto:julianstaendeke@gmx.de">julianstaendeke@gmx.de</a>
+      <a href="https://www.instagram.com/dj.julianst/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor"/></svg>@dj.julianst</a>
+    </div>
+  </div>
+</section>
+
+<section id="medien" class="alt">
+  <div class="narrow">
+    <div class="head rev">
+      <span class="eyebrow">Instagram</span>
+      <h2>Mehr Einblicke gibt es bei Instagram</h2>
+    </div>
+    <div class="rev" style="text-align:center">
+      <a class="btn" style="margin-top:0;display:inline-flex;align-items:center;gap:10px" href="https://www.instagram.com/dj.julianst/" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor"/></svg>
+        @dj.julianst
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="links">
+    <a href="https://www.instagram.com/dj.julianst/" target="_blank" rel="noopener">Instagram</a>
+    <a href="mailto:julianstaendeke@gmx.de">E-Mail</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <p>© <span id="y"></span> DJ Julian · Open Format · Limburg, Taunus &amp; Westerwald</p>
+  <p style="margin-top:8px;font-size:.78rem">Die Bilder auf dieser Seite sind mit KI erzeugte Stimmungsbilder.</p>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <p class="dtitle">Menü</p>
+  <a href="#leistungen">Anlässe</a>
+  <a href="#technik">Angebote</a>
+  <a href="#ablauf">Ablauf</a>
+  <a href="#referenzen">Referenzen</a>
+  <a href="#kontakt">Anfrage</a>
+</aside>
+
+<a class="btn sticky-cta" id="sticky" href="#kontakt"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>Jetzt anfragen</a>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+// Scroll-Reveal
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), {threshold:.12});
+document.querySelectorAll('.rev').forEach(el => io.observe(el));
+
+// Mobile-Menü
+(()=>{
+  const b=document.getElementById('burger'), d=document.getElementById('drawer'), o=document.getElementById('overlay');
+  const set=open=>{d.classList.toggle('open',open);o.classList.toggle('open',open);
+    b.setAttribute('aria-expanded',open);b.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+    d.setAttribute('aria-hidden',!open);document.body.style.overflow=open?'hidden':'';};
+  b.addEventListener('click',()=>set(!d.classList.contains('open')));
+  o.addEventListener('click',()=>set(false));
+  d.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
+  addEventListener('keydown',e=>{if(e.key==='Escape')set(false);});
+})();
+
+// Sticky-Button: nach kurzem Scrollen sichtbar, nicht beim Formular
+(()=>{
+  const b=document.getElementById('sticky'), form=document.getElementById('kontakt');
+  let scrolled=false, formIn=false;
+  const upd=()=>b.classList.toggle('show',scrolled&&!formIn);
+  addEventListener('scroll',()=>{scrolled=scrollY>300;upd();},{passive:true});
+  new IntersectionObserver(e=>{formIn=e[0].isIntersecting;upd();},{threshold:.15}).observe(form);
+})();
+
+// Zitat-Karussell (endlos, flüssig)
+(()=>{
+  const track=document.getElementById('qtrack');
+  const orig=[...track.children], n=orig.length, C=3;
+  orig.slice(-C).reverse().forEach(c=>{const k=c.cloneNode(true);k.setAttribute('aria-hidden','true');track.insertBefore(k,track.firstChild);});
+  orig.slice(0,C).forEach(c=>{const k=c.cloneNode(true);k.setAttribute('aria-hidden','true');track.appendChild(k);});
+  let i=C, busy=false, timer=null;
+  const step=()=>track.children[0].getBoundingClientRect().width+parseFloat(getComputedStyle(track).columnGap||18);
+  const place=(anim)=>{track.classList.toggle('nt',!anim);track.style.transform=`translateX(${-i*step()}px)`;};
+  const go=d=>{if(busy)return;busy=true;i+=d;place(true);};
+  track.addEventListener('transitionend',e=>{
+    if(e.target!==track)return;
+    if(i>=n+C){i-=n;place(false);} else if(i<C){i+=n;place(false);}
+    requestAnimationFrame(()=>{busy=false;});
+  });
+  addEventListener('resize',()=>place(false));
+  place(false);
+  const prev=document.getElementById('qprev'), next=document.getElementById('qnext');
+  prev.addEventListener('click',()=>{go(-1);restart();});
+  next.addEventListener('click',()=>{go(1);restart();});
+  // Wischen am Handy
+  let x0=null;
+  track.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;stop();},{passive:true});
+  track.addEventListener('touchend',e=>{
+    if(x0===null)return; const dx=e.changedTouches[0].clientX-x0; x0=null;
+    if(Math.abs(dx)>40) go(dx<0?1:-1); restart();
+  });
+  // Automatisch weiter, pausiert bei Hover
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const stop=()=>{clearInterval(timer);timer=null;};
+  const restart=()=>{stop();if(!reduce)timer=setInterval(()=>go(1),7000);};
+  const sl=track.closest('.slider');
+  sl.addEventListener('mouseenter',stop); sl.addEventListener('mouseleave',restart);
+  restart();
+})();
+
+// Formular -> direkt per E-Mail (FormSubmit)
+const form = document.getElementById('form');
+const status = document.getElementById('status');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = form.querySelector('button');
+  const d = new FormData(form);
+  d.append('_subject', `Neue DJ-Anfrage: ${d.get('anlass')} – ${d.get('name')}`);
+  d.append('_replyto', d.get('email'));
+  d.append('_template', 'table');
+  d.append('_captcha', 'false');
+  btn.disabled = true; status.textContent = 'Wird gesendet …';
+  try {
+    const r = await fetch('https://formsubmit.co/ajax/julianstaendeke@gmx.de', {
+      method:'POST', headers:{Accept:'application/json'}, body:d
+    });
+    if (!r.ok) throw new Error();
+    form.reset();
+    status.textContent = 'Danke! Eure Anfrage ist angekommen, ich melde mich bei euch.';
+  } catch {
+    status.innerHTML = 'Das hat leider nicht geklappt. Bitte schreibt mir direkt an <a href="mailto:julianstaendeke@gmx.de" style="color:var(--sky)">julianstaendeke@gmx.de</a>.';
+  }
+  btn.disabled = false;
+});
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wann sollten wir anfragen?", "acceptedAnswer": {"@type": "Answer", "text": "Am besten, sobald Location und Rahmen eures Events feststehen, also so früh wie möglich. Es kann aber auch sein, dass ich spontan Zeit habe. Fragt einfach an."}}, {"@type": "Question", "name": "Was kostet ein Abend mit dir?", "acceptedAnswer": {"@type": "Answer", "text": "Das hängt von Dauer, Ort und Technik ab. Ihr bekommt vorab ein klares Angebot. Preise starten ab 200 €."}}, {"@type": "Question", "name": "Wo legst du auf?", "acceptedAnswer": {"@type": "Answer", "text": "Meistens in Limburg, im Taunus und im Westerwald. Als Open-Format-DJ passe ich mich Anlass und Ort an, alles Weitere besprechen wir persönlich."}}, {"@type": "Question", "name": "Was bedeutet Open Format?", "acceptedAnswer": {"@type": "Answer", "text": "Ich lege mich auf kein Genre fest. Mein Mix reicht von Schlager bis Techno und richtet sich nach euren Gästen und der Stimmung im Raum."}}, {"@type": "Question", "name": "Kann ich Lieder wünschen oder Titel ausschließen?", "acceptedAnswer": {"@type": "Answer", "text": "Sehr gerne, das ist sogar gewollt. Eure Lieblingslieder bekommen einen festen Platz, und No-Gos spiele ich nicht."}}, {"@type": "Question", "name": "Bringst du Ton, Licht und Effekte mit?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, auf Wunsch bringe ich alles mit. Ich habe gute Technik und kenne sie selbst sehr gut. Das macht es für euch einfacher, denn ihr bekommt alles aus einer Hand. In der Regel wird es auch günstiger, als Technik woanders zu leihen und professionell aufbauen zu lassen."}}, {"@type": "Question", "name": "Kann ich besondere Programmpunkte einplanen?", "acceptedAnswer": {"@type": "Answer", "text": "Na klar, das macht Spaß und gehört zu meinem Job. Eröffnungstanz, Reden oder andere besondere Momente bereiten wir gemeinsam vor."}}]}</script>
+</body>
+</html>
